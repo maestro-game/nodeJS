@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+@font-face { font-family: Pricedown;
+	src: url("../fonts/pricedown.ttf");
+}
+@font-face { font-family: Old-English;
+	src: url("../fonts/old-english.ttf");
+}
+
+.nav-item {
+	font-size: 36px;
+}
+
+body {
+	background-color: #000000;
+	font-family: "Pricedown";
+	font-weight: 400;
+	font-size: 24px;
+	color: #ffffff;
+}
+
+section {
+	margin-left: 20px;
+}
+
+h1 {
+	font-family: "Old-English";
+}
+
+h2 {
+	text-decoration: underline;
+	margin-top: 50px;
+}
+
+h3, h4, h5, h6 {
+	font-family: "Pricedown";
+	font-size: 30px;
+	margin-left: 25px;
+	font-weight: 300;
+	color: #FFFFFF;
+}
+
+p {
+	margin-left: 35px;
+	line-height: 28px;
+	font-family: "Raleway";
+}
+
+footer {
+	margin-top: 40px;
+	margin-left: 20px;
+	font-family: "Arial";
+}
+
+.standarted {
+	font-family: "Arial";
+}
