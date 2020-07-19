@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+            integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+            crossorigin="anonymous"></script>
+    <title>Портфолио Junior верстальщика</title>
+</head>
+
+<script>
+    function getProfile() {
+        $.getJSON("/profile", function (response) {
+            $("#profile_s1").append(response[0]["s1"]);
+            $("#profile_s1p").append(response[0]["s1p"]);
+            $("#profile_s2").append(response[0]["s2"]);
+            for(let i = 0; response[0]["s2l"][i] !== undefined; i++){
+                $("#profile_s2l" + (i + 1)).append(response[0]["s2l"][i]);
+            }
+        });
+    }
+</script>
+
+<body onload="getProfile()">
+<header>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Главная</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fa fa-envelope-o" aria-hidden="true"></i> Написать мне</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile.html"><i class="fa fa-info-circle" aria-hidden="true"></i> Обо мне</a>
+        </li>
+    </ul>
+</header>
+
+<section>
+    <h2>Отправлено</h2>
+</section>
+
+<footer class>
+    <i class="fa fa-phone" aria-hidden="true"></i> 8-800-555-3535
+</footer>
+</body>
+</html>

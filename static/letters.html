@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+            integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+            crossorigin="anonymous"></script>
+    <title>Портфолио Junior верстальщика</title>
+</head>
+
+<script>
+    function getLetters() {
+        $.getJSON("/letters", function (response) {
+            for (let i = 0; i < response.length; i++) {
+                $("#tbody").append("<tr>" +
+                    "<th scope=\"row\">" + (i + 1) + "</th>" +
+                    "<td>" + response[i]["name"] + "</td>" +
+                    "<td>" + response[i]["email"] + "</td>" +
+                    "<td>" + response[i]["letter"] + "</td>" +
+                    "</tr>");
+            }
+        });
+    }
+</script>
+
+<body onload="getLetters()">
+<header>
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Главная</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="contact.html"><i class="fa fa-envelope-o" aria-hidden="true"></i> Написать мне</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="profile.html"><i class="fa fa-info-circle" aria-hidden="true"></i> Обо мне</a>
+        </li>
+    </ul>
+</header>
+
+<section>
+    <h2>Запросы</h2>
+    <table class="table table-striped table-dark raleway table-sm">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Имя</th>
+            <th scope="col">Почта</th>
+            <th scope="col">Сообщение</th>
+        </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</section>
+
+<footer class>
+    <i class="fa fa-phone" aria-hidden="true"></i> 8-800-555-3535
+</footer>
+</body>
+</html>
